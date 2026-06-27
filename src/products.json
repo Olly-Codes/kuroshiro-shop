@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "productDescription": "King of the Sea Blazer",
+        "productPrice": 200,
+        "productCategory": "One Piece"
+    },
+    {
+        "id": 2,
+        "productDescription": "Bungee Gum Unleashed",
+        "productPrice": 450,
+        "productCategory": "Hunter x Hunter"
+    },
+    {
+        "id": 3,
+        "productDescription": "Chairman's Watch",
+        "productPrice": 680,
+        "productCategory": "Hunter x Hunter"
+    },
+    {
+        "id": 4,
+        "productDescription": "Demon Ascent Coat",
+        "productPrice": 799,
+        "productCategory": "Iruma Kun"
+    }
+]
