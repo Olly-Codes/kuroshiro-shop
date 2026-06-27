@@ -3,6 +3,7 @@ import dummyProducts from '../products.json';
 
 const Shop = () => {
     const [products, setProducts] = useState(dummyProducts);
+    const [inputValue, setInputValue] = useState(0);
 
     return (
         <div className="shop-content">
@@ -23,7 +24,13 @@ const Shop = () => {
                         </div>
                         <div className="input-wrapper">
                             <button type="button">-</button>
-                            <input type="text" inputMode="numeric" />
+                            <input 
+                                type="text" 
+                                inputMode="numeric"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                style={{ textAlign: 'center' }}
+                             />
                             <button type="button">+</button>
                         </div>
                         <div className="button-wrapper">
