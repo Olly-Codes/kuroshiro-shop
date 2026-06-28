@@ -54,6 +54,12 @@ function App() {
     });
   }
 
+  const handleRemoveFromCart = (id) => {
+    setCart((prevCart) => {
+      return prevCart.filter((p) => p.id !== id)
+    })
+  }
+
   const handleIncrement = (id) => {
         setProducts((prevProducts) => {
             return prevProducts.map((p) => {
@@ -77,6 +83,7 @@ function App() {
             <Cart cart={cart}
                   handleIncrementCart={handleIncrementCart} 
                   handleDecrementCart={handleDecrementCart}
+                  handleRemoveFromCart={handleRemoveFromCart}
             />
           } 
         />

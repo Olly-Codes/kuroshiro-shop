@@ -1,5 +1,5 @@
 
-const Cart = ({ cart, handleIncrementCart, handleDecrementCart }) => {
+const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFromCart }) => {
   const subtotal = Number((cart.reduce((subtotal, product) => subtotal + (product.quantity * product.price), 0)).toFixed(2));
   const tax = Number((cart.reduce((subtotal, product) => subtotal + (product.quantity * product.price), 0) * 0.15).toFixed(2));
   const total = Number((subtotal + tax).toFixed(2));
@@ -35,7 +35,12 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart }) => {
                 </div>
                 <div className="cart-price-btn-wrapper">
                   <p>{product.price}</p>
-                  <button>Remove</button>
+                  <button 
+                    type="button"
+                    onClick={() => handleRemoveFromCart(product.id)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </li>
             })}
