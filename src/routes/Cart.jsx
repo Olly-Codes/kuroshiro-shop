@@ -11,13 +11,13 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
             {cart.length > 0 ? (
               <ul>
                 {cart.map((product) => {
-                  return <li key={product.id}>
-                    {/*<div className="cart-img-wrapper">
-                      <img src={product.image} alt={product.title} />
-                    </div>*/}
+                  return <li className="cart-item" key={product.id}>
+                    <div className="cart-img-wrapper">
+                      {/* <img src={product.image} alt={product.title} /> */}
+                    </div>
                     <div className="cart-product-info-wrapper">
-                      <p>{product.category}</p>
-                    <p>{product.title}</p>
+                      <p className="cart-category">{product.category}</p>
+                      <p className="cart-title">{product.title}</p>
                     <div className="cart-buttons-wrapper">
                       <button 
                         className="cart-decrement-btn"
@@ -33,18 +33,19 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
                         +
                       </button>
                     </div>
-                </div>
-                <div className="cart-price-btn-wrapper">
-                  <p>{product.price}</p>
-                  <button 
-                    type="button"
-                    onClick={() => handleRemoveFromCart(product.id)}
-                  >
-                    Remove
-                  </button>
-                </div>
-              </li>
-            })}
+                    </div>
+                    <div className="cart-price-btn-wrapper">
+                      <p className="cart-price">R {product.price}</p>
+                      <button 
+                        type="button"
+                        onClick={() => handleRemoveFromCart(product.id)}
+                        className="cart-remove-btn"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </li>
+                })}
               </ul>
             ) : (
               <ul>
