@@ -23,7 +23,18 @@ const Shop = () => {
                 return p;
             });
         });
+        console.log(products)
+    }
 
+    const handleIncrement = (id) => {
+        setProducts((prevProducts) => {
+            return prevProducts.map((p) => {
+                if (p.id === id) {
+                    return { ...p, quantity: p.quantity + 1 }
+                }
+                return p;
+            });
+        });
         console.log(products)
     }
 
@@ -53,7 +64,10 @@ const Shop = () => {
                                 onChange={(e) => handleQuanityChange(product.id, e.target.value)}
                                 style={{ textAlign: 'center' }}
                              />
-                            <button type="button">+</button>
+                            <button 
+                                type="button"
+                                onClick={() => handleIncrement(product.id)}
+                            >+</button>
                         </div>
                         <div className="button-wrapper">
                             <button type="button">Add to Cart</button>
