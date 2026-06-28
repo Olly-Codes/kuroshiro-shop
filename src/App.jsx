@@ -7,13 +7,41 @@ import About from './routes/About'
 import Cart from './routes/Cart'
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (id, image, quantity) => {
+    if (!quantity || quantity === 0) {
+      return;
+    }
+    const cartProduct = { id, image, quantity };
+    const inCart = cart.find((product) => product.id === id);
+    
+    if (inCart) {
+      setCart((prevCart) => {
+        return prevCart.map((p) => {
+          if (p.id === id) {
+            return { ...p, quantity: p.quantity + quantity}
+          }
+          return p;
+        });
+      });
+    } else {
+      setCart((prevCart) => {
+        return [...prevCart, cartProduct]
+      });
+    }
+  }
+
+  
+
+  console.log(cart);
 
   return (
     <div className="app-content">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>

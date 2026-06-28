@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import dummyProducts from '../products.json';
 
-const Shop = () => {
+const Shop = ({ handleAddToCart }) => {
     const [products, setProducts] = useState(() => {
         return dummyProducts.map((product) => {
             return { ...product, quantity: 0 }
@@ -87,7 +87,12 @@ const Shop = () => {
                             </button>
                         </div>
                         <div className="button-wrapper">
-                            <button type="button">Add to Cart</button>
+                            <button 
+                                type="button"
+                                onClick={() => handleAddToCart(product.id, product.image, product.quantity)}
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </li>
                 })}
