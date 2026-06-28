@@ -1,23 +1,23 @@
-import { Link } from "react-router"
+import { Link, NavLink } from "react-router"
 
 const Navbar = ({ cartCount }) => {
   return (
-    <div className="navbar-content">
+    <header className="header-content">
         <nav className="nav">
             <div className="nav-logo-wrapper">
-                <Link to="/">KuroShiro</Link>
+                <Link className="nav-logo" to="/">KuroShiro</Link>
             </div>
 
             <div className="nav-link-wrapper">
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <NavLink className="nav-link" to="/">Home</NavLink>
                     </li>
                     <li>
-                        <Link to="/shop">Shop</Link>
+                        <NavLink className="nav-link" to="/shop">Shop</NavLink>
                     </li>
                     <li>
-                        <Link to="/about">About</Link>
+                        <NavLink className="nav-link" to="/about">About</NavLink>
                     </li>
                 </ul>
             </div>
@@ -25,12 +25,12 @@ const Navbar = ({ cartCount }) => {
             <div className="nav-cart-wrapper">
                 <ul>
                     <li>
-                        <Link to="/cart">Cart <span>{cartCount}</span></Link>
+                        <NavLink className="nav-cart-link" to="/cart">Cart <span>{cartCount}</span></NavLink>
                     </li>
                 </ul>
             </div>
         </nav>
-    </div>
+    </header>
   )
 }
 
