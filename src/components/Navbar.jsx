@@ -1,6 +1,6 @@
 import { Link } from "react-router"
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   return (
     <div className="navbar-content">
         <nav className="nav">
@@ -25,7 +25,7 @@ const Navbar = () => {
             <div className="nav-cart-wrapper">
                 <ul>
                     <li>
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/cart">Cart <span>{cartCount}</span></Link>
                     </li>
                 </ul>
             </div>

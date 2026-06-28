@@ -32,13 +32,9 @@ function App() {
     }
   }
 
-  
-
-  console.log(cart);
-
   return (
     <div className="app-content">
-      <Navbar />
+      <Navbar cartCount={new Set(cart.map((cartProduct) => cartProduct.id)).size}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} />} />
