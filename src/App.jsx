@@ -9,11 +9,11 @@ import Cart from './routes/Cart'
 function App() {
   const [cart, setCart] = useState([]);
 
-  const handleAddToCart = (id, image, quantity) => {
+  const handleAddToCart = (id, image, category, title, price, quantity) => {
     if (!quantity || quantity === 0) {
       return;
     }
-    const cartProduct = { id, image, quantity };
+    const cartProduct = { id, image, category, title, price, quantity };
     const inCart = cart.find((product) => product.id === id);
     
     if (inCart) {

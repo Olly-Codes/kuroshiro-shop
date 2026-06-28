@@ -89,7 +89,14 @@ const Shop = ({ handleAddToCart }) => {
                         <div className="button-wrapper">
                             <button 
                                 type="button"
-                                onClick={() => handleAddToCart(product.id, product.image, product.quantity)}
+                                onClick={() => handleAddToCart(
+                                    product.id,
+                                    product.image, 
+                                    product.category,
+                                    product.title,
+                                    product.price,
+                                    product.quantity
+                                )}
                             >
                                 Add to Cart
                             </button>
