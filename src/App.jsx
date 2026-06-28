@@ -6,6 +6,7 @@ import Shop from './routes/Shop'
 import About from './routes/About'
 import Cart from './routes/Cart'
 import Footer from './components/Footer'
+import './styles/styles.css'
 
 function App() {
   const [cart, setCart] = useState([]);
