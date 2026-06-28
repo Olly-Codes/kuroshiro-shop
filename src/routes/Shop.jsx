@@ -7,7 +7,25 @@ const Shop = () => {
             return { ...product, quantity: 0 }
         });
     });
-    // const [inputValue, setInputValue] = useState(0);
+
+    const handleQuanityChange = (id, newQuantity) => {
+
+        if (!newQuantity || newQuantity === "") {
+            newQuantity = 0;
+            return;
+        }
+
+        setProducts((prevProducts) => {
+            return prevProducts.map((p) => {
+                if (p.id === id) {
+                    return { ...p, quantity: parseInt(newQuantity) }
+                }
+                return p;
+            });
+        });
+
+        console.log(products)
+    }
 
     return (
         <div className="shop-content">
@@ -29,10 +47,10 @@ const Shop = () => {
                         <div className="input-wrapper">
                             <button type="button">-</button>
                             <input 
-                                type="text" 
-                                inputMode="numeric"
+                                type="number"
+                                min={0} 
                                 value={products.find((p) => p.id === product.id).quantity}
-                                // onChange={(e) => setInputValue(e.target.value)}
+                                onChange={(e) => handleQuanityChange(product.id, e.target.value)}
                                 style={{ textAlign: 'center' }}
                              />
                             <button type="button">+</button>
