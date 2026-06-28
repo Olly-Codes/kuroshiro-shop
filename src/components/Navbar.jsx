@@ -25,7 +25,7 @@ const Navbar = ({ cartCount }) => {
             <div className="nav-cart-wrapper">
                 <ul>
                     <li>
-                        <NavLink className="nav-cart-link" to="/cart">Cart <span>{cartCount}</span></NavLink>
+                        <NavLink className="nav-cart-link" to="/cart">Cart <span className="cart-count">{cartCount}</span></NavLink>
                     </li>
                 </ul>
             </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import dummyProducts from '../products.json';
 
 const Home = () => {
@@ -7,14 +8,14 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-text-wrapper">
           <h1>The <br /> Collection.</h1>
-          <p>View Pieces</p>
+          <Link className="hero-link" to="/shop">View Pieces</Link>
         </div>
 
         <div className="hero-img-wrapper"></div>
       </section>
 
       <div className="divider">
-        <p>Free Delivery on all orders</p>
+        <p>Free Delivery on all orders &bull; Season 45 Live Now</p>
       </div>
       
       {top3.length > 0 && (
@@ -23,8 +24,10 @@ const Home = () => {
             {top3.map((product) => {
               return <li key={product.id}>
                 <div className="showcase-img-wrapper"></div>
-                <p>{product.category}</p>
-                <p>{product.title}</p>
+                <div className="showcase-details-wrapper">
+                  <p className="showcase-category">{product.category}</p>
+                  <p className="showcase-title">{product.title}</p>
+                </div>
               </li>
             })}
           </ul>
