@@ -32,6 +32,39 @@ function App() {
     }
   }
 
+  const handleIncrementCart = (id) => {
+    setCart((prevCart) => {
+      return prevCart.map((p) => {
+        if (p.id === id) {
+          return { ...p, quantity: p.quantity + 1 }
+        }
+        return p;
+      });
+    });
+  }
+
+  const handleDecrementCart = (id) => {
+    setCart((prevCart) => {
+      return prevCart.map((p) => {
+        if (p.id === id) {
+          return { ...p, quantity: p.quantity - 1 }
+        }
+        return p;
+      });
+    });
+  }
+
+  const handleIncrement = (id) => {
+        setProducts((prevProducts) => {
+            return prevProducts.map((p) => {
+                if (p.id === id) {
+                    return { ...p, quantity: p.quantity + 1 }
+                }
+                return p;
+            });
+        });
+    }
+
   return (
     <div className="app-content">
       <Navbar cartCount={new Set(cart.map((cartProduct) => cartProduct.id)).size}/>
@@ -39,7 +72,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" 
+          element={
+            <Cart cart={cart}
+                  handleIncrementCart={handleIncrementCart} 
+                  handleDecrementCart={handleDecrementCart}
+            />
+          } 
+        />
       </Routes>
     </div>
   )
