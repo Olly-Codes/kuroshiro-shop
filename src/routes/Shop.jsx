@@ -56,15 +56,15 @@ const Shop = ({ handleAddToCart }) => {
             <ul className="product-wrapper">
                 {products.map((product) => {
                     return <li key={product.id}>
-                        {/* <div className="product-img">
-                            <img style={{ width: 200, height: 200 }} src={product.image} alt={product.title} />
-                        </div> */}
+                        <div className="product-img">
+                            {/* <img style={{ width: 200, height: 200 }} src={product.image} alt={product.title} /> */}
+                        </div>
                         <div className="product-details">
-                            <p>{product.category}</p>
-                            <p>{product.title}</p>
+                            <p className="product-category">{product.category}</p>
+                            <p className="product-title">{product.title}</p>
                             <div className="price-rating">
-                                <p>R{product.price}</p>
-                                <p>{product.rating.rate}</p>
+                                <p className="product-price">R{product.price}</p>
+                                <p className="product-rating">{product.rating.rate}</p>
                             </div>
                         </div>
                         <div className="input-wrapper">
@@ -78,6 +78,7 @@ const Shop = ({ handleAddToCart }) => {
                                 value={products.find((p) => p.id === product.id).quantity}
                                 onChange={(e) => handleQuanityChange(product.id, e.target.value)}
                                 style={{ textAlign: 'center' }}
+                                className="product-input"
                              />
                             <button 
                                 type="button"
