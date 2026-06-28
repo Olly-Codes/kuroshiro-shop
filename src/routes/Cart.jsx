@@ -8,30 +8,31 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
       <h1>Your Cart</h1>
       <div className="cart-details">
         <div className="cart-items">
-          <ul>
-            {cart.map((product) => {
-              return <li key={product.id}>
-                {/* <div className="cart-img-wrapper">
-                  <img src={product.image} alt={product.title} />
-                </div> */}
-                <div className="cart-product-info-wrapper">
-                  <p>{product.category}</p>
-                  <p>{product.title}</p>
-                  <div className="cart-buttons-wrapper">
-                    <button 
-                      className="cart-decrement-btn"
-                      onClick={() => handleDecrementCart(product.id)}
-                    >
-                      -
-                    </button>
-                    <span>{product.quantity}</span>
-                    <button 
-                      className="cart-increment-btn"
-                      onClick={() => handleIncrementCart(product.id)}
-                    >
-                      +
-                    </button>
-                  </div>
+            {cart.length > 0 ? (
+              <ul>
+                {cart.map((product) => {
+                  return <li key={product.id}>
+                    {/*<div className="cart-img-wrapper">
+                      <img src={product.image} alt={product.title} />
+                    </div>*/}
+                    <div className="cart-product-info-wrapper">
+                      <p>{product.category}</p>
+                    <p>{product.title}</p>
+                    <div className="cart-buttons-wrapper">
+                      <button 
+                        className="cart-decrement-btn"
+                        onClick={() => handleDecrementCart(product.id)}
+                      >
+                        -
+                      </button>
+                      <span>{product.quantity}</span>
+                      <button 
+                        className="cart-increment-btn"
+                        onClick={() => handleIncrementCart(product.id)}
+                      >
+                        +
+                      </button>
+                    </div>
                 </div>
                 <div className="cart-price-btn-wrapper">
                   <p>{product.price}</p>
@@ -44,22 +45,32 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
                 </div>
               </li>
             })}
-          </ul>
+              </ul>
+            ) : (
+              <ul>
+                <li>There are no products in your cart yet</li>
+              </ul>
+            )}
+            
         </div>
 
-        <div className="cart-summary">
-          <h2>Order summary</h2>
-          <ul>
-            <li>Subtotal <span>R {subtotal}</span></li>
-            <li>Shipping <span>Free</span></li>
-            <li>Tax <span>R {tax}</span></li>
-            <li>Total <span>R {total}</span></li>
-          </ul>
+        {cart.length > 0 && (
+          <>
+          <div className="cart-summary">
+            <h2>Order summary</h2>
+              <ul>
+                <li>Subtotal <span>R {subtotal}</span></li>
+                <li>Shipping <span>Free</span></li>
+                <li>Tax <span>R {tax}</span></li>
+                <li>Total <span>R {total}</span></li>
+              </ul>
 
-          <div className="cart-checkout-btn-wrapper">
-            <button type="button">Proceed to checkout</button>
+            <div className="cart-checkout-btn-wrapper">
+              <button type="button">Proceed to checkout</button>
+            </div>
           </div>
-        </div>
+          </>
+        )}
       </div>
     </div>
   )
