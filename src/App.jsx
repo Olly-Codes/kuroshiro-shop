@@ -5,6 +5,7 @@ import Home from './routes/Home'
 import Shop from './routes/Shop'
 import About from './routes/About'
 import Cart from './routes/Cart'
+import Footer from './components/Footer'
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -88,6 +89,7 @@ function App() {
           } 
         />
       </Routes>
+      <Footer />
     </div>
   )
 }
