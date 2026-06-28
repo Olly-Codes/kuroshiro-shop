@@ -23,7 +23,6 @@ const Shop = () => {
                 return p;
             });
         });
-        console.log(products)
     }
 
     const handleIncrement = (id) => {
@@ -35,7 +34,20 @@ const Shop = () => {
                 return p;
             });
         });
-        console.log(products)
+    }
+
+     const handleDecrement = (id) => {
+        setProducts((prevProducts) => {
+            return prevProducts.map((p) => {
+                if (p.id === id) {
+                    if (p.quantity === 0) {
+                        return p;
+                    }
+                    return { ...p, quantity: p.quantity - 1 }
+                }
+                return p;
+            });
+        });
     }
 
     return (
@@ -56,7 +68,10 @@ const Shop = () => {
                             </div>
                         </div>
                         <div className="input-wrapper">
-                            <button type="button">-</button>
+                            <button 
+                                type="button"
+                                onClick={() => handleDecrement(product.id)}
+                            >-</button>
                             <input 
                                 type="number"
                                 min={0} 
@@ -67,7 +82,9 @@ const Shop = () => {
                             <button 
                                 type="button"
                                 onClick={() => handleIncrement(product.id)}
-                            >+</button>
+                            >
+                                +
+                            </button>
                         </div>
                         <div className="button-wrapper">
                             <button type="button">Add to Cart</button>
