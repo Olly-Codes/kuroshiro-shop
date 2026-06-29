@@ -266,6 +266,7 @@ a.active .cart-count {
     list-style: none;
 
     display: grid;
+    gap: 10px;
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -278,7 +279,7 @@ a.active .cart-count {
 
 .product-img {
     width: 100%;
-    height: 350px;
+    height: 450px;
     background-color: var(--surface-raised);
     border-bottom: 1px solid var(--border-strong);
 }
