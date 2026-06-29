@@ -2,7 +2,7 @@
 
 A fictional luxury fashion website mixed with anime. The project is a React focused shopping cart project
 <br>
-Live Preview: (coming soon)
+Live Preview: https://kuroshiro-shop.vercel.app/
 
 ## Overview
 KuroShiro is a fictional storefront that is themed around the concept of anime characters and being treated as high end fashion icons. Products are all fetched from a local json file and through this, we can browse the collection of products, add items to cart and make any last minute changes before checkout.
