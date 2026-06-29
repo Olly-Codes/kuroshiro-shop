@@ -1,16 +1,60 @@
-# React + Vite
+# KuroShiro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fictional luxury fashion website mixed with anime. The project is a React focused shopping cart project
+<br>
+Live Preview: (coming soon)
 
-Currently, two official plugins are available:
+## Overview
+KuroShiro is a fictional storefront that is themed around the concept of anime characters and being treated as high end fashion icons. Products are all fetched from a local json file and through this, we can browse the collection of products, add items to cart and make any last minute changes before checkout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Home
+<img width="1920" height="2367" alt="kuroshiro-shop-home" src="https://github.com/user-attachments/assets/90f86fa7-b9ed-4766-b6d5-bf24b0b1b26c" />
+<br>
 
-## React Compiler
+## Shop
+<img width="1920" height="2407" alt="kuroshiro-shop-collection" src="https://github.com/user-attachments/assets/da327205-2ec8-4afe-9189-4bbcf00633e0" />
+<br>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cart
+<img width="1920" height="1916" alt="kuroshiro-shop-cart" src="https://github.com/user-attachments/assets/183f06d4-6644-4b1e-bba2-9d929fc7d9a8" />
+<br>
 
-## Expanding the ESLint configuration
+## Features
+- Product data was originally fetched from th FakeStore API on mount, however this was changed for a more creative idea and nose uses local json for data retrieval and updates.
+- Users are able to add products to cart and have live updates in the navigation
+- Users can either type a custom amount or use buttons to change the quantity to add to cart
+- Items can be removed from the cart if needed
+- Client side navigation using `react-router`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+- React
+- Vite
+
+## Getting Started
+### Prerequisites
+- Node.js
+
+### Installation
+1. Clone the repo
+```bash
+git clone https://github.com/Olly-Codes/kuroshiro-shop.git
+cd kuroshiro-store
+```
+
+2. Install dependencies
+```
+npm install
+```
+
+3. Start development server
+```bash
+npm run dev
+```
+
+## What I learned
+- Lifting state so multiple pages can read and update the same cart state without prop drilling other components
+- Using `react-router` to create a multi-page SPA
+
+## Acknowledgements
+- All pictures are not mine, they were all sourced from Pinterest. If removal is necessary, please let me know
+- Prices and clothing are all made up
