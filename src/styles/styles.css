@@ -53,7 +53,7 @@ body, html {
     text-transform: uppercase;
     text-decoration: none;
     color: var(--accent);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .nav-link-wrapper ul, .nav-cart-wrapper ul {
@@ -508,4 +508,72 @@ a.active .cart-count {
     justify-content: center;
     align-items: center;
     border: 1px dotted var(--border-strong);
+}
+
+/* ----- ABOUT */
+.main-about-section {
+    width: 100%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.main-about-left, .main-about-right {
+    width: 100%;
+    height: inherit;
+    padding: 0px 80px 0px 80px;
+
+    border: 1px solid var(--border-strong);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-about-left h1 {
+    font-size: 5rem;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+.main-about-right p {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+}
+
+.middle-about-section {
+    width: 100%;
+    padding: 80px;
+    border: 1px solid var(--border-strong);
+}
+
+.rule {
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.middle-about-text {
+    color: var(--text-primary);
+    font-style: italic;
+    font-size: 2rem;
+    width: 800px;
+}
+
+.about-details {
+    width: 100%;
+    list-style: none;
+
+    color: var(--text-secondary);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.about-details li {
+    border: 1px solid var(--border-strong);
+    padding: 80px;
 }

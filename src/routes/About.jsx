@@ -13,8 +13,8 @@ const About = () => {
       </section>
 
       <section className="middle-about-section">
-        <p>The rule</p>
-        <p>It's simple. We produce a limited amount of pieces. There no reprints or restocks. Get it while it's hot.</p>
+        <p className="rule">The rule</p>
+        <p className="middle-about-text">It's simple. We produce a limited amount of pieces. There no reprints or restocks. Get it while it's hot.</p>
       </section>
 
       <section className="bottom-about-section">
