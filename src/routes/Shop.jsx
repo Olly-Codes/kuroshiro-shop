@@ -57,7 +57,7 @@ const Shop = ({ handleAddToCart }) => {
                 {products.map((product) => {
                     return <li key={product.id}>
                         <div className="product-img">
-                            {/* <img style={{ width: 200, height: 200 }} src={product.image} alt={product.title} /> */}
+                            <img src={product.image} alt={product.title} />
                         </div>
                         <div className="product-details">
                             <p className="product-category">{product.category}</p>

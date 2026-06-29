@@ -13,7 +13,7 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
                 {cart.map((product) => {
                   return <li className="cart-item" key={product.id}>
                     <div className="cart-img-wrapper">
-                      {/* <img src={product.image} alt={product.title} /> */}
+                      <img src={product.image} alt={product.title} />
                     </div>
                     <div className="cart-product-info-wrapper">
                       <p className="cart-category">{product.category}</p>

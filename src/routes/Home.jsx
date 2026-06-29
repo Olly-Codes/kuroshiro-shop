@@ -26,7 +26,9 @@ const Home = () => {
           <ul className="showcase-wrapper">
             {top3.map((product) => {
               return <li key={product.id}>
-                <div className="showcase-img-wrapper"></div>
+                <div className="showcase-img-wrapper">
+                  <img src={product.image} alt={product.title} />
+                </div>
                 <div className="showcase-details-wrapper">
                   <p className="showcase-category">{product.category}</p>
                   <p className="showcase-title">{product.title}</p>
