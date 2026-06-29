@@ -58,3 +58,4 @@ npm run dev
 ## Acknowledgements
 - All pictures are not mine, they were all sourced from Pinterest. If removal is necessary, please let me know
 - Prices and clothing are all made up
+- Not mobile responsive, will update soon
