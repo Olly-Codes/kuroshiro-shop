@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import dummyProducts from '../products.json';
+import heroImg from "../assets/luffy.jpg"
 
 const Home = () => {
   const top3 = dummyProducts.slice(0, 3);
@@ -11,7 +12,9 @@ const Home = () => {
           <Link className="hero-link" to="/shop">View Pieces</Link>
         </div>
 
-        <div className="hero-img-wrapper"></div>
+        <div className="hero-img-wrapper">
+          <img src={heroImg} alt="Luffy in a suit" />
+        </div>
       </section>
 
       <div className="divider">
