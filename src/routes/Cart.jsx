@@ -48,7 +48,7 @@ const Cart = ({ cart, handleIncrementCart, handleDecrementCart, handleRemoveFrom
                 })}
               </ul>
             ) : (
-              <ul>
+              <ul className="cart-none-wrapper">
                 <li>There are no products in your cart yet</li>
               </ul>
             )}
