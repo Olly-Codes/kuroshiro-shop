@@ -364,7 +364,7 @@ a.active .cart-count {
 }
 
 .button-wrapper {
-    width: 100;
+    width: 100%;
     padding: 0px 40px 40px 40px;
 
     display: flex;
